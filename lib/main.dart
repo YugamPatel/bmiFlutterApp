@@ -38,8 +38,78 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text("Flutter"),
         ),
         body: 
+
         
         
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.center,
+        //   children: [
+
+        //     Expanded(
+        //       flex: 2,
+        //       child: Container(
+        //         height: 70,
+        //         width: 70,
+        //         color: Colors.lightGreen,
+        //       ),
+        //     ),
+        //     Expanded(
+        //       flex: 3,
+        //       child: Container(
+        //         height: 70,
+        //         width: 70,
+        //         color: Colors.lightBlue,
+        //       ),
+        //     ),
+        //     Expanded(
+        //       flex: 4,
+        //       child: Container(
+        //         width: 70,
+        //         height: 70,
+        //         color: Colors.red,
+        //       ),
+        //     ),
+
+        //      Expanded(
+        //       flex: 1,
+        //        child: Container(
+        //           width: 70,
+        //           height: 70,
+        //           color: Colors.grey,
+        //         ),
+        //      ),
+        //   ],
+        // )  // End Lec
+
+        //  Container(
+        //   width: double.infinity,
+        //   height: double.infinity,
+        //   color: Colors.amber,
+        //   child: Center(
+        //     child: Container(
+        //       width: 100,
+        //       height: 100,
+        //       decoration: BoxDecoration(
+        //         color: Colors.blue,
+        //         borderRadius: BorderRadius.circular(10),
+        //         // borderRadius: BorderRadius.only(topLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+        //         border: Border.all(
+        //           color: Colors.black,
+        //           width: 4,
+        //         ),
+        //         boxShadow: const [
+        //           BoxShadow(
+        //             blurRadius: 10 ,
+        //             offset: Offset(30,30),
+        //             color: Colors.black,
+        //           )
+        //         ],
+        //         // shape: BoxShape.circle, // remove box radius if use
+        //       ),
+        //     ),
+        //   ),
+        // )
+
         // ListView.separated( // Recycler view in android studio
         //   itemBuilder: (context, index) {
         //     return Text(
