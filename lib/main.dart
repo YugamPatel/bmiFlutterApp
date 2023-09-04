@@ -34,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var city = TextEditingController();
     var country = TextEditingController();
+
     var arrayNames = ["heet", "yugam", "bimal", "shiv", "viraj", "utsav"];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -55,81 +56,65 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text("Flutter"),
         ),
         body: Center(
-          child: Container(
-            width: 300,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextField(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 300,
+                child: TextField(
+                  controller: city,
                   decoration: InputDecoration(
-                    // suffixText: "HI YUGAM",
-                    // prefixText: "Enter",
-                    // prefixIcon: IconButton(
-                    //   icon: Icon(Icons.abc),
-                    //   onPressed: () {
-                    //     print("Hello");
-                    //   },
-                    // ),
-                    suffixIcon: IconButton(
-                      icon: Icon(Icons.remove_red_eye),
-                      onPressed: () => print("hello"),
+                    prefixIcon: IconButton(
+                      icon: Icon(Icons.email),
+                      onPressed: () {},
                     ),
-                    prefixIcon: Icon(Icons.abc),
+                    hintText: "Email",
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.blue,
-                        width: 5,
-                      ),
-                    ),
-                  ),
-                ),
-                Container(
-                  height: 11,
-                ),
-                TextField(
-                  controller: city,
-                  decoration: InputDecoration(
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: const BorderSide(
-                          color: Colors.green,
-                          width: 4,
-                        )),
-                  ),
-                ),
-                Container(
-                  height: 11,
-                ),
-                TextField(
-                  controller: city,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.orange,
                         width: 4,
                       ),
                     ),
                   ),
                 ),
-                Container(
-                  height: 11,
-                ),
-                TextField(
-                  enabled: false,
+              ),
+              Container(
+                height: 11,
+              ),
+              Container(
+                width: 300,
+                child: TextField(
+                  // keyboardType: TextInputType.number,
+                  controller: country,
+                  obscureText: true,
                   decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.remove_red_eye),
+                      onPressed: () {},
+                    ),
+                    hintText: "Password",
+                    border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: const BorderSide(
-                        color: Colors.orange,
+                      borderSide: BorderSide(
+                        color: Colors.green,
                         width: 4,
                       ),
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+              Container(
+                height: 11,
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    String cityText = city.text.toString();
+                    String countryText = country.text.toString();
+                    print("Email : $cityText Pass : $countryText");
+                  },
+                  child: Text("Submit"))
+            ],
           ),
         ),
       ),
