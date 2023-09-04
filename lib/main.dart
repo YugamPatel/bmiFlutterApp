@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:supabase/ui_helper/util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,33 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text("Flutter"),
         ),
-        body: Center(
-          child: Column(
-            children: [
-              Text(
+        body: const Center(
+          child: Card(
+            elevation: 30,
+            shadowColor: Colors.black,
+            child: Padding(
+              padding: const EdgeInsets.all(11.0),
+              child: Text(
                 "Hello World",
-                style: Theme.of(context).textTheme.displayMedium,
+                style: TextStyle(
+                  fontSize: 14,
+                  fontFamily: 'yugamsfont',
+                ),
               ),
-              Text(
-                "Hello World I",
-                style: Theme.of(context)
-                    .textTheme
-                    .displayMedium
-                    ?.copyWith(fontStyle: FontStyle.italic, color: Colors.red),
-              ),
-              Text(
-                "Hello World ",
-                style: myTextStyle20(),
-              ),
-              Text(
-                "Hello World",
-                style: myTextStyle15(),
-              ),
-              Text(
-                "Hello World",
-                style: myTextStyle15(textbook: Colors.blue),
-              ),
-            ],
+            ),
           ),
         ),
       ),
