@@ -31,7 +31,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var arrList = ["yugam", "amish", "Patel", "Heet", "Bimal"];
     return Scaffold(
         // backgroundColor: Colors.amberAccent,
         appBar: AppBar(
@@ -39,48 +38,27 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         body: 
 
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-
-            Expanded(
-              flex: 2,
-              child: Container(
-                height: 70,
-                width: 70,
-                color: Colors.lightGreen,
-              ),
+          Container(
+            margin: const EdgeInsets.all(11),
+            decoration: const BoxDecoration(
+              color: Colors.amber,
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 10 ,
+                  offset: Offset(5, 5),
+                )
+              ]
             ),
-            
-            Expanded(
-              flex: 3,
-              child: Container(
-                height: 70,
-                width: 70,
-                color: Colors.lightBlue,
+            child: const Padding(
+              padding: EdgeInsets.all(10),
+              child: Text("HelloWorld" , 
+              style: TextStyle(
+                fontSize: 20 ,
               ),
-            ),
-            Expanded(
-              flex: 4,
-              child: Container(
-                width: 70,
-                height: 70,
-                color: Colors.red,
               ),
+            )
             ),
-
-             Expanded(
-              flex: 1,
-               child: Container(
-                  width: 70,
-                  height: 70,
-                  color: Colors.grey,
-                ),
-             ),
-          ],
-        )  
-
-
+       
         );
   }
 }
