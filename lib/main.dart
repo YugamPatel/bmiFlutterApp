@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,22 +38,34 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text("Flutter"),
       ),
-      body: ListView.separated(
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            leading: Text('${index+1}'),
-            title: const Text("this is text"),
-            subtitle: const Text("data"),
-            trailing: const Icon(Icons.account_box_sharp),
-          );
-        },
-        separatorBuilder: (context, index) {
-          return const Divider(
-            height: 20,
-          );
-        },
-        itemCount: arrayNames.length,
-      ),
+      body: 
+       Center(
+        child: CircleAvatar(
+          // backgroundImage: AssetImage(
+          //   'assets/images/undraw_growth_chart_r99m.png'
+          // ),
+          
+          backgroundColor: Colors.amber,
+          radius: 50,
+          
+          child: ListView(
+            children: [
+              Container(
+                child: const CircleAvatar(backgroundColor: Colors.red,radius: 50,),
+              ),
+              Container(
+                child: const CircleAvatar(backgroundColor: Colors.lightBlue,radius: 50),
+              ),
+              Container(
+                child: const CircleAvatar(backgroundColor: Colors.pink,radius: 50),
+              ),
+              Container(
+                child: const CircleAvatar(backgroundColor: Colors.green,radius: 50),
+              ),
+            ],
+          ),
+          ),
+        ),
     );
   }
 }
