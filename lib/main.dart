@@ -37,17 +37,17 @@ class _MyHomePageState extends State<MyHomePage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          textTheme: const TextTheme(
-            displayMedium: TextStyle(
-                color: Colors.lightBlue,
-                fontSize: 50,
-                fontFamily: 'yugamsfont',
-                fontWeight: FontWeight.bold,
-                letterSpacing: 10,
-                wordSpacing: 10),
-          ),
-          ),
+        primarySwatch: Colors.blue,
+        textTheme: const TextTheme(
+          displayMedium: TextStyle(
+              color: Colors.lightBlue,
+              fontSize: 50,
+              fontFamily: 'yugamsfont',
+              fontWeight: FontWeight.bold,
+              letterSpacing: 10,
+              wordSpacing: 10),
+        ),
+      ),
       home: Scaffold(
         backgroundColor: Colors.amberAccent,
         appBar: AppBar(
@@ -62,15 +62,22 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Text(
                 "Hello World I",
-                style: Theme.of(context).textTheme.displayMedium?.copyWith(fontStyle: FontStyle.italic , color: Colors.red),
+                style: Theme.of(context)
+                    .textTheme
+                    .displayMedium
+                    ?.copyWith(fontStyle: FontStyle.italic, color: Colors.red),
               ),
               Text(
-                "Hello World",
+                "Hello World ",
                 style: myTextStyle20(),
               ),
               Text(
                 "Hello World",
                 style: myTextStyle15(),
+              ),
+              Text(
+                "Hello World",
+                style: myTextStyle15(textbook: Colors.blue),
               ),
             ],
           ),
