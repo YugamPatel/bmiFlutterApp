@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:supabase/ui_helper/util.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,20 +34,48 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     var arrayNames = ["heet", "yugam", "bimal", "shiv", "viraj", "utsav"];
-    return Scaffold(
-      // backgroundColor: Colors.amberAccent,
-      appBar: AppBar(
-        title: Text("Flutter"),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          primarySwatch: Colors.blue,
+          textTheme: const TextTheme(
+            displayMedium: TextStyle(
+                color: Colors.lightBlue,
+                fontSize: 50,
+                fontFamily: 'yugamsfont',
+                fontWeight: FontWeight.bold,
+                letterSpacing: 10,
+                wordSpacing: 10),
+          ),
+          ),
+      home: Scaffold(
+        backgroundColor: Colors.amberAccent,
+        appBar: AppBar(
+          title: Text("Flutter"),
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              Text(
+                "Hello World",
+                style: Theme.of(context).textTheme.displayMedium,
+              ),
+              Text(
+                "Hello World I",
+                style: Theme.of(context).textTheme.displayMedium?.copyWith(fontStyle: FontStyle.italic , color: Colors.red),
+              ),
+              Text(
+                "Hello World",
+                style: myTextStyle20(),
+              ),
+              Text(
+                "Hello World",
+                style: myTextStyle15(),
+              ),
+            ],
+          ),
+        ),
       ),
-      body: 
-      const Center(
-        child: Text("Hello World",
-        style: TextStyle(
-          fontFamily: 'yugamsfont' ,
-          fontSize: 40,
-        ),
-        ),
-      )
     );
   }
 }
