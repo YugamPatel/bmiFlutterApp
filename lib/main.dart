@@ -32,6 +32,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var city = TextEditingController();
+    var country = TextEditingController();
     var arrayNames = ["heet", "yugam", "bimal", "shiv", "viraj", "utsav"];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -48,23 +50,85 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       home: Scaffold(
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Color.fromARGB(120, 7, 92, 108),
         appBar: AppBar(
           title: Text("Flutter"),
         ),
-        body: const Center(
-          child: Card(
-            elevation: 30,
-            shadowColor: Colors.black,
-            child: Padding(
-              padding: const EdgeInsets.all(11.0),
-              child: Text(
-                "Hello World",
-                style: TextStyle(
-                  fontSize: 14,
-                  fontFamily: 'yugamsfont',
+        body: Center(
+          child: Container(
+            width: 300,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  decoration: InputDecoration(
+                    // suffixText: "HI YUGAM",
+                    // prefixText: "Enter",
+                    // prefixIcon: IconButton(
+                    //   icon: Icon(Icons.abc),
+                    //   onPressed: () {
+                    //     print("Hello");
+                    //   },
+                    // ),
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.remove_red_eye),
+                      onPressed: () => print("hello"),
+                    ),
+                    prefixIcon: Icon(Icons.abc),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(
+                        color: Colors.blue,
+                        width: 5,
+                      ),
+                    ),
+                  ),
                 ),
-              ),
+                Container(
+                  height: 11,
+                ),
+                TextField(
+                  controller: city,
+                  decoration: InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: const BorderSide(
+                          color: Colors.green,
+                          width: 4,
+                        )),
+                  ),
+                ),
+                Container(
+                  height: 11,
+                ),
+                TextField(
+                  controller: city,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(
+                        color: Colors.orange,
+                        width: 4,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  height: 11,
+                ),
+                TextField(
+                  enabled: false,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10),
+                      borderSide: const BorderSide(
+                        color: Colors.orange,
+                        width: 4,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
