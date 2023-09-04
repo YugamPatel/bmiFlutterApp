@@ -31,13 +31,28 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+    var arrayNames = ["heet", "yugam", "bimal", "shiv", "viraj", "utsav"];
     return Scaffold(
-        // backgroundColor: Colors.amberAccent,
-        appBar: AppBar(
-          title: Text("Flutter"),
-        ),
-        body: 
-       
-        );
+      // backgroundColor: Colors.amberAccent,
+      appBar: AppBar(
+        title: Text("Flutter"),
+      ),
+      body: ListView.separated(
+        itemBuilder: (BuildContext context, int index) {
+          return ListTile(
+            leading: Text('${index+1}'),
+            title: const Text("this is text"),
+            subtitle: const Text("data"),
+            trailing: const Icon(Icons.account_box_sharp),
+          );
+        },
+        separatorBuilder: (context, index) {
+          return const Divider(
+            height: 20,
+          );
+        },
+        itemCount: arrayNames.length,
+      ),
+    );
   }
 }
