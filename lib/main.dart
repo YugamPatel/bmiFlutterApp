@@ -37,27 +37,6 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text("Flutter"),
         ),
         body: 
-
-          Container(
-            margin: const EdgeInsets.all(11),
-            decoration: const BoxDecoration(
-              color: Colors.amber,
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 10 ,
-                  offset: Offset(5, 5),
-                )
-              ]
-            ),
-            child: const Padding(
-              padding: EdgeInsets.all(10),
-              child: Text("HelloWorld" , 
-              style: TextStyle(
-                fontSize: 20 ,
-              ),
-              ),
-            )
-            ),
        
         );
   }
