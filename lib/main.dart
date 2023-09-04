@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MyApp());
@@ -53,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'current time : ${dateTime.hour}:${dateTime.minute}:${dateTime.second}',
+                    'current time : ${DateFormat().format(dateTime)}',
                     style: TextStyle(
                       fontSize: 20,
                       fontFamily: 'yugamsfont',
