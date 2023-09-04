@@ -39,33 +39,14 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text("Flutter"),
       ),
       body: 
-       Center(
-        child: CircleAvatar(
-          // backgroundImage: AssetImage(
-          //   'assets/images/undraw_growth_chart_r99m.png'
-          // ),
-          
-          backgroundColor: Colors.amber,
-          radius: 50,
-          
-          child: ListView(
-            children: [
-              Container(
-                child: const CircleAvatar(backgroundColor: Colors.red,radius: 50,),
-              ),
-              Container(
-                child: const CircleAvatar(backgroundColor: Colors.lightBlue,radius: 50),
-              ),
-              Container(
-                child: const CircleAvatar(backgroundColor: Colors.pink,radius: 50),
-              ),
-              Container(
-                child: const CircleAvatar(backgroundColor: Colors.green,radius: 50),
-              ),
-            ],
-          ),
-          ),
+      const Center(
+        child: Text("Hello World",
+        style: TextStyle(
+          fontFamily: 'yugamsfont' ,
+          fontSize: 40,
         ),
+        ),
+      )
     );
   }
 }
