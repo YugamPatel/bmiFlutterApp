@@ -47,29 +47,46 @@ class _MyHomePageState extends State<MyHomePage> {
           appBar: AppBar(
             title: Text("Flutter"),
           ),
-          body: Center(
-            child: Container(
-              width: 300,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'current time : ${DateFormat().format(dateTime)}',
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Center(
+                child: InkWell(
+                  onTap: () {
+                    var time = showTimePicker(
+                        context: context, initialTime: TimeOfDay.now());
+                  },
+                  onDoubleTap: () {
+                     var date = showDatePicker(
+                        context: context,
+                        initialDate: DateTime.now(),
+                        firstDate: DateTime(2003),
+                        lastDate: DateTime(2030));
+                  },
+                  child: const Text(
+                    "hello world",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 21,
                       fontFamily: 'yugamsfont',
-                      fontWeight: FontWeight.w300,
-                      color: Colors.red,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.black,
                     ),
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        setState(() {});
-                      },
-                      child: Text("Submit"))
-                ],
+                ),
               ),
-            ),
+              ElevatedButton(
+                onPressed: () {
+                  var showDate = showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(2003),
+                    lastDate: DateTime(2090),
+                  );
+                },
+                child: Text("Submit"),
+              ),
+            ],
           )),
     );
   }
