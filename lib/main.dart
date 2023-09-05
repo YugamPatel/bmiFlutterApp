@@ -43,51 +43,132 @@ class _MyHomePageState extends State<MyHomePage> {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-          backgroundColor: Color.fromARGB(120, 7, 92, 108),
-          appBar: AppBar(
-            title: Text("Flutter"),
+        backgroundColor: Color.fromARGB(120, 7, 92, 108),
+        appBar: AppBar(
+          title: Text("Flutter"),
+        ),
+        body: GridView.builder(
+          // gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          //   crossAxisCount: 2,
+          //   crossAxisSpacing: 10,
+          //   mainAxisSpacing: 10
+          // ),
+
+          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+            maxCrossAxisExtent: 200,
+            mainAxisSpacing: 5,
+            crossAxisSpacing: 5,
           ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Center(
-                child: InkWell(
-                  onTap: () {
-                    var time = showTimePicker(
-                        context: context, initialTime: TimeOfDay.now());
-                  },
-                  onDoubleTap: () {
-                     var date = showDatePicker(
-                        context: context,
-                        initialDate: DateTime.now(),
-                        firstDate: DateTime(2003),
-                        lastDate: DateTime(2030));
-                  },
-                  child: const Text(
-                    "hello world",
-                    style: TextStyle(
-                      fontSize: 21,
-                      fontFamily: 'yugamsfont',
-                      fontWeight: FontWeight.w500,
-                      color: Colors.black,
-                    ),
-                  ),
-                ),
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  var showDate = showDatePicker(
-                    context: context,
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(2003),
-                    lastDate: DateTime(2090),
-                  );
-                },
-                child: Text("Submit"),
-              ),
-            ],
-          )),
+          itemCount: 10,
+
+          itemBuilder: (BuildContext context, int index) {
+            return Container(
+              color: Colors.green,
+            );
+          },
+        ),
+
+        // Column(
+        //   children: [
+        //     Container(
+        //       height: 300,
+        //       child: GridView.count(
+        //           crossAxisCount: 4,
+        //           crossAxisSpacing: 10,
+        //           mainAxisSpacing: 10,
+        //           children: [
+        //             Container(
+        //               width: 30,
+        //               height: 30,
+        //               color: Colors.blue,
+        //             ),
+        //             Container(
+        //               width: 30,
+        //               height: 30,
+        //               color: Colors.blue,
+        //             ),
+        //             Container(
+        //               width: 30,
+        //               height: 30,
+        //               color: Colors.blue,
+        //             ),
+        //             Container(
+        //               width: 30,
+        //               height: 30,
+        //               color: Colors.blue,
+        //             ),
+        //             Container(
+        //               width: 30,
+        //               height: 30,
+        //               color: Colors.blue,
+        //             ),
+        //           ]),
+        //     ),
+
+        //     Container(
+        //       height: 10,
+        //       width: 20,
+        //     ),
+
+        //     Container(
+        //       height: 300,
+        //       child: GridView.extent(
+        //         maxCrossAxisExtent: 80,
+        //         mainAxisSpacing: 10,
+        //         crossAxisSpacing: 10,
+        //         children: [
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             color: Colors.blue,
+        //           ),
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             color: Colors.red,
+        //           ),
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             color: Colors.green,
+        //           ),
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             color: Colors.black,
+        //           ),
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             color: Colors.purple,
+        //           ),
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             color: Colors.pink,
+        //           ),
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             color: Colors.orange,
+        //           ),
+        //           Container(
+        //             width: 30,
+        //             height: 30,
+        //             color: Colors.grey,
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+
+        //     Container(
+        //       height: 10,
+        //       width: 20,
+        //     ),
+
+        //   ],
+        // ),
+      ),
     );
   }
 }
