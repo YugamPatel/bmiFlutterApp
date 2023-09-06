@@ -1,4 +1,4 @@
-# supabase
+# Bmi App
 
 A new Flutter project.
 
