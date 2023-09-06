@@ -109,33 +109,38 @@ class _MyHomePageState extends State<MyHomePage> {
                       var w = weight.text.toString();
                       var h1 = height.text.toString();
                       var h2 = heightInch.text.toString();
+
                       if (w != "" && (h1 != "" || h2 != "")) {
                         int iw = int.parse(w);
+                        double bmi; // Use double for precise decimal places
                         if (h1 != "") {
                           int ih1 = int.parse(h1);
                           bmi = iw / (ih1 * ih1);
-                          print(bmi);
-                          print("H1");
                         } else {
                           int ih2 = int.parse(h2);
                           bmi = (iw * 2.2) / (ih2 * ih2);
                         }
 
+                        // Limit BMI to 2 decimal places
+                        String formattedBmi = bmi.toStringAsFixed(2);
+
                         if (bmi > 25) {
                           msg = "You are Overweight!!";
                           bgcolor = Colors.orange;
                         } else if (bmi < 18) {
-                          msg = "You are UnderWeight!!";
+                          msg = "You are Underweight!!";
                           bgcolor = Colors.red.shade300;
                         } else {
                           msg = "You are healthy";
                           bgcolor = Colors.green;
                         }
                         setState(() {
-                          result = "Your bmi is : ${bmi.toString()}";
+                          result =
+                              "Your BMI is : $formattedBmi"; // Display the formatted BMI
                         });
                       } else {
                         setState(() {
+                          msg = "";
                           result = "Please enter all the require information";
                         });
                       }
